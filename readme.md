@@ -134,5 +134,5 @@ https://registry.terraform.io/browse/providers
 ### How to setup credentials in github to run terraform through github actions?
 
 
-### How to setup an s3 bucket for terraform state file?
+### How to setup an s3 bucket and DynamoDB for terraform state file?
 
