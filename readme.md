@@ -144,3 +144,6 @@ https://registry.terraform.io/browse/providers
 
 ### can we run a file which is not named as main.tf?
 
+
+
+https://www.youtube.com/watch?v=7xngnjfIlK4&t=56s
