@@ -2,7 +2,8 @@ name: Terraform Plan/Apply OIDC
 on: workflow_dispatch
 
 permissions:
-  id-token: write # This is required for requesting the JWT
+  id-token: write   # Required for OIDC to work
+  contents: read    # Required for actions/checkout
 
 jobs:
   terraform:
