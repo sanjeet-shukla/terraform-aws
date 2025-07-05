@@ -136,3 +136,11 @@ https://registry.terraform.io/browse/providers
 
 ### How to setup an s3 bucket and DynamoDB for terraform state file?
 
+
+### Running Terraform from a directory
+- `terraform -chdir=./db init`
+- `terraform -chdir=./db plan`
+- `terraform -chdir=./db apply`
+
+### can we run a file which is not named as main.tf?
+
