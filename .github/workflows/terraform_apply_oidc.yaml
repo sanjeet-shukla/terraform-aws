@@ -13,11 +13,23 @@ jobs:
           curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
           "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r '.value' | cut -d '.' -f2 | base64 -d | jq
 
-      - name: Configure AWS via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::801010597202:role/terraform-github-oidc
-          aws-region: us-east-1
+#      - name: Configure AWS via OIDC
+#        uses: aws-actions/configure-aws-credentials@v4
+#        with:
+#          role-to-assume: arn:aws:iam::801010597202:role/terraform-github-oidc
+#          aws-region: us-east-1
+
+      - name: Assume AWS Role
+        run: |
+            # Fetch the OIDC token
+            TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+              "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r '.value')
+
+            # Assume the AWS role
+            aws sts assume-role-with-web-identity \
+              --role-arn arn:aws:iam::801010597202:role/terraform-github-oidc \
+              --role-session-name github-actions-test \
+              --web-identity-token "$TOKEN"
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2

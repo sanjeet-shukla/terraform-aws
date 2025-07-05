@@ -1,0 +1,22 @@
+name: Terraform with OIDC
+on: push
+
+permissions:
+  id-token: write   # Required for OIDC to work
+  contents: read    # Required for actions/checkout
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::801010597202:role/terraform-github-oidc
+          aws-region: us-east-1
+          audience: sts.amazonaws.com  # Optional (default is already sts.amazonaws.com)
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
