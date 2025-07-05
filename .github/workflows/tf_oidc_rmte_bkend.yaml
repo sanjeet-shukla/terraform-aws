@@ -1,4 +1,4 @@
-name: Terraform Plan/Apply OIDC
+name: Terraform Backend
 on: workflow_dispatch
 
 permissions:

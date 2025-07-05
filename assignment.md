@@ -1,20 +1,4 @@
-# Rearc Data Quest
-
-### Q. What is this quest?
-It is a fun way to assess your data skills. It is also a good representative sample of the work we do at Rearc.
-
-### Q. So what skills should I have?
-* Data management / data engineering concepts.
-* Programming language (python, java, scala, etc).
-* AWS knowledge (Lambda, SQS, CloudWatch logs).
-* Infrastructure-as-code (Terraform, CloudFormation, etc)
-
-### Q. What do I have to do?
-This quest consists of 4 different parts. Putting all 4 parts together we will have a Data Pipeline architecture.
-- Part 1 and Part 2 will showcase your skills with data management, AWS concepts, and your overall data engineering skillset.
-  The goal is to source data from different places and store it in-house.
-- Part 3 will showcase your data analytics skills. The goal is to find some interesting insights with data.
-- Lastly, Part 4 will put all the pieces together. The goal here is to showcase your experience with automation and AWS services.
+# AWS Data Assignment
 
 #### Part 1: AWS S3 & Sourcing Datasets
 1. Republish [this open dataset](https://download.bls.gov/pub/time.series/pr/) in Amazon S3 and share with us a link.
