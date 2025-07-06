@@ -212,8 +212,7 @@ resource "aws_db_instance" "db_instance" {
   storage_type               = "standard"
   engine                     = "postgres"
   engine_version             = "12"
-  instance_class             = "db.t2.micro"
-  name                       = "mydb"
+  instance_class             = "db.t3.micro"
   username                   = "foo"
   password                   = "foobarbaz"
   skip_final_snapshot        = true

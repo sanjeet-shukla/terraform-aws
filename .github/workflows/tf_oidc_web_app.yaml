@@ -26,5 +26,5 @@ jobs:
       - name: Terraform Plan
         run: terraform -chdir=web_app plan -no-color
 
-      - name: Terraform Apply
-        run: terraform -chdir=web_app apply -auto-approve
+      - name: Terraform Destroy
+        run: terraform -chdir=web_app destroy -auto-approve

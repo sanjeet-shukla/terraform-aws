@@ -1,3 +1,8 @@
 .terraform
 aws
 .idea
+
+remote-backend/.terraform
+web_app/.terraform
+remote-backend/.terraform.lock.hcl
+web_app/.terraform.lock.hcl

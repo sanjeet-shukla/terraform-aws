@@ -148,3 +148,10 @@ https://registry.terraform.io/browse/providers
 
 https://www.youtube.com/watch?v=7xngnjfIlK4&t=56s
 https://github.com/sidpalas/devops-directive-terraform-course/tree/main/08-testing/deployed/production
+
+
+DynamoDB Before:
+> ![dynamodb-lock.png](images/dynamodb-lock.png)
+
+DynamoDB After:
+> ![tf_lock_after.png](tf_lock_after.png)
