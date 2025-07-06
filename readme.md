@@ -147,3 +147,4 @@ https://registry.terraform.io/browse/providers
 
 
 https://www.youtube.com/watch?v=7xngnjfIlK4&t=56s
+https://github.com/sidpalas/devops-directive-terraform-course/tree/main/08-testing/deployed/production
