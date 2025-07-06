@@ -1,0 +1,30 @@
+name: Terraform WebApp
+on: workflow_dispatch
+
+permissions:
+  id-token: write   # Required for OIDC to work
+  contents: read    # Required for actions/checkout
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assume AWS Role
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::801010597202:role/github-oidc-role
+          aws-region: us-east-1
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Terraform Init
+        run: terraform -chdir=web_app init
+
+      - name: Terraform Plan
+        run: terraform -chdir=web_app plan -no-color
+
+      - name: Terraform Apply
+        run: terraform -chdir=web_app apply -auto-approve
